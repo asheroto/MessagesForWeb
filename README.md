@@ -12,3 +12,5 @@ To start up the program to the system tray (window hidden on launch), pass the `
 ``` 
 
 When you install the program it will add it to your Windows startup.
+
+[Download](https://github.com/asheroto/MessagesForWeb/releases/latest/download/MessagesForWeb.exe) the latest version.

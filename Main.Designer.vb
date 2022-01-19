@@ -41,7 +41,7 @@ Partial Class Main
         Me.WV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WV.Location = New System.Drawing.Point(0, 0)
         Me.WV.Name = "WV"
-        Me.WV.Size = New System.Drawing.Size(1004, 687)
+        Me.WV.Size = New System.Drawing.Size(1011, 687)
         Me.WV.Source = New System.Uri("https://messages.google.com/web/conversations", System.UriKind.Absolute)
         Me.WV.TabIndex = 0
         Me.WV.ZoomFactor = 1.0R
@@ -80,7 +80,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 687)
+        Me.ClientSize = New System.Drawing.Size(1011, 687)
         Me.Controls.Add(Me.WV)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"

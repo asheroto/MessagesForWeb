@@ -4,25 +4,13 @@ Imports System.ComponentModel
 
 Public Class Main
     Dim AllowClose As Boolean = False
-
-    'Windows API declarations for hotkey
-    Const WM_HOTKEY As Integer = &H312
-    Const NOMOD As Integer = &H0
-    Const ALT As Integer = &H1
-    Const CTRL As Integer = &H2
-    Const SHIFT As Integer = &H4
-    Const WIN As Integer = &H8
-    Declare Function RegisterHotKey Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal id As Integer, ByVal fsModifier As Integer, ByVal vk As Integer) As Integer
-    Declare Function UnregisterHotKey Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal id As Integer) As Boolean
-    Declare Function SetForegroundWindow Lib "user32.dll" (ByVal hWnd As IntPtr) As Boolean
-
     Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) Handles WV.NavigationCompleted
         Text = WV.CoreWebView2.DocumentTitle
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Register hotkey
-        Hotkey.registerHotkey(Me, "M", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Winkey)
+        Hotkey.registerHotkey(Me, "M", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
 
         WindowState = FormWindowState.Maximized
     End Sub
@@ -83,7 +71,6 @@ Public Class Main
         Next
         Opacity = 100
     End Sub
-
 End Class
 
 Public Class Hotkey

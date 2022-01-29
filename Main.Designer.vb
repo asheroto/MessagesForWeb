@@ -86,7 +86,7 @@ Partial Class Main
         Me.Name = "Main"
         Me.Opacity = 0R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Messages for web"
+        Me.Text = "Messages for Web"
         CType(Me.WV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SystemTrayIconContextMenu.ResumeLayout(False)
         Me.ResumeLayout(False)

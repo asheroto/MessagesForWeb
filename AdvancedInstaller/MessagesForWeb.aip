@@ -15,10 +15,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Google"/>
-    <ROW Property="ProductCode" Value="1033:{E4D364B1-9D31-471A-A747-CEFB8C8F7712} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{BAA555A0-CD2E-4057-A1FC-EFA9BB24DA12} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="Messages for web"/>
-    <ROW Property="ProductVersion" Value="0.0.1.1" Type="32"/>
+    <ROW Property="ProductName" Value="Messages for Web"/>
+    <ROW Property="ProductVersion" Value="0.0.2" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>

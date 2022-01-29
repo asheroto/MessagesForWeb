@@ -33,6 +33,7 @@ Public Class Main
 
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles SystemTrayIcon.MouseDoubleClick
         Show()
+        BringToFront()
         Activate()
     End Sub
 

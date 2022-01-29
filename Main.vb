@@ -31,10 +31,21 @@ Public Class Main
         End Try
     End Sub
 
+    Sub WaitNice(ms As Long)
+        Dim x As New Stopwatch
+        x.Start()
+        Do While x.ElapsedMilliseconds <= ms
+            Application.DoEvents()
+        Loop
+        x.Stop()
+    End Sub
+
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles SystemTrayIcon.MouseDoubleClick
         Show()
-        BringToFront()
+        WaitNice(100)
         Activate()
+        WaitNice(100)
+        BringToFront()
     End Sub
 
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing

@@ -19,10 +19,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Google"/>
-    <ROW Property="ProductCode" Value="1033:{1691E63B-3A52-4735-B424-CB9A0348483C} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{A592FA25-FE9A-4F8C-99EB-BDF3A1C73E0D} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Messages for Web"/>
-    <ROW Property="ProductVersion" Value="0.0.4" Type="32"/>
+    <ROW Property="ProductVersion" Value="0.0.5" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>
@@ -38,6 +38,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="StartupFolder" Directory_Parent="TARGETDIR" DefaultDir="STARTU~1|StartupFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -46,7 +47,7 @@
     <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{EABDEB9B-7937-4FAD-B9F8-1310BEFD5B37}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{7F2E3465-911F-4D74-A7EC-DC8A393A2619}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{9BE358BC-097F-413E-A35F-8361D30A4467}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{8D62FEAF-8AEC-498A-A136-CC52956D7E58}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>
@@ -295,6 +296,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="MessagesForWeb.exe_1" Directory_="DesktopFolder" Name="MESSAG~2|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="MessagesforWeb" Directory_="ProgramMenuFolder" Name="MESSAG~1|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="Messagesforweb" Directory_="SHORTCUTDIR" Name="MESSAG~1|Messages for web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="Messagesforweb_1" Directory_="StartupFolder" Name="MESSAG~2|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Arguments="-startup" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>

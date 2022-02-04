@@ -46,6 +46,8 @@ Public Class Main
         Activate()
         WaitNice(100)
         BringToFront()
+        WaitNice(100)
+        Activate()
     End Sub
 
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing

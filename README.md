@@ -1,8 +1,8 @@
-﻿# Messages for web (on Windows) 
+﻿# Messages for Web (on Windows) 
 
-Runs Google Messages for web inside of a native Windows application.
+Runs Google Messages for Web inside of a native Windows application.
 
-Keeps Messages for web running in the system tray. To show the window, press **Ctrl+Alt+M** or right-click the icon and click "Show".
+Keeps Messages for Web running in the system tray. To show the window, press **Ctrl+Alt+M** or right-click the icon and click "Show".
 
 To start up the program to the system tray (window hidden on launch), pass the `-startup` argument.
 

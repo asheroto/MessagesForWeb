@@ -50,10 +50,13 @@
     <ROW Component="AI_ExePath" ComponentId="{8D62FEAF-8AEC-498A-A136-CC52956D7E58}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="MessagesForWeb.exe" ComponentId="{D98782A2-732A-4B6D-9038-73733261623F}" Directory_="APPDIR" Attributes="256" KeyPath="MessagesForWeb.exe"/>
-    <ROW Component="MessagesForWeb.exe.config" ComponentId="{E14FC251-B179-4B46-ACEF-B383F84237D5}" Directory_="APPDIR" Attributes="0" KeyPath="MessagesForWeb.exe.config" Type="0"/>
+    <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{A22FA990-C404-4219-90AA-36044DDC331F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
+    <ROW Component="Microsoft.Web.WebView2.WinForms.dll" ComponentId="{B794F4C5-F732-4B8F-9750-9B3A2D32D38F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.WinForms.dll"/>
+    <ROW Component="Microsoft.Web.WebView2.WinForms.xml" ComponentId="{DDA08988-BA04-4265-B910-BE31918475D2}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.WinForms.xml" Type="0"/>
+    <ROW Component="Microsoft.Web.WebView2.Wpf.dll" ComponentId="{5936C401-9786-4E26-899A-85AC735DE1AA}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Wpf.dll"/>
     <ROW Component="ProductInformation" ComponentId="{5C06956C-E2F4-437A-AC79-2A1E151F4C4F}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{19E56193-C19C-4B99-B18E-9869E8F5143E}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="WebView2Loader.dll" ComponentId="{7DCCD353-5DCE-4790-85CB-93570160ABF7}" Directory_="native_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
+    <ROW Component="WebView2Loader.dll" ComponentId="{252205E5-DBA2-428F-8B3B-3C618836C511}" Directory_="native_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -61,8 +64,15 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="MessagesForWeb.exe" Component_="MessagesForWeb.exe" FileName="MESSAG~1.EXE|MessagesForWeb.exe" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="MessagesForWeb.exe.config" Component_="MessagesForWeb.exe.config" FileName="MESSAG~1.CON|MessagesForWeb.exe.config" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe.config" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.WinForms.dll" Component_="Microsoft.Web.WebView2.WinForms.dll" FileName="MICROS~1.DLL|Microsoft.Web.WebView2.WinForms.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.WinForms.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~1.XML|Microsoft.Web.WebView2.WinForms.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Wpf.dll" Component_="Microsoft.Web.WebView2.Wpf.dll" FileName="MICROS~2.DLL|Microsoft.Web.WebView2.Wpf.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Wpf.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~2.XML|Microsoft.Web.WebView2.Wpf.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.xml" SelfReg="false"/>
     <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
+    <ROW File="MessagesForWeb.exe.config" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MESSAG~1.CON|MessagesForWeb.exe.config" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe.config" SelfReg="false"/>
+    <ROW File="MessagesForWeb.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MESSAG~1.XML|MessagesForWeb.xml" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICROS~3.DLL|Microsoft.Web.WebView2.Core.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~3.XML|Microsoft.Web.WebView2.Core.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="b" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -179,8 +189,11 @@
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
     <ROW Feature_="MainFeature" Component_="MessagesForWeb.exe"/>
-    <ROW Feature_="MainFeature" Component_="MessagesForWeb.exe.config"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.WinForms.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.WinForms.xml"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Wpf.dll"/>
     <ROW Feature_="MainFeature" Component_="WebView2Loader.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Core.dll"/>
     <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
     <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>

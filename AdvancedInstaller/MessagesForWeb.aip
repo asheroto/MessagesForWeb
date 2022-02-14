@@ -5,10 +5,8 @@
     <ROW Property="AI_CURRENT_YEAR" Value="2022" ValueLocId="-"/>
     <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
-    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION;AI_DETECTED_INTERNET_CONNECTION"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|ProductName]"/>
-    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.5" ValueLocId="-"/>
-    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.5" ValueLocId="-"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
@@ -16,13 +14,14 @@
     <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="MessagesForWeb.exe" Type="8"/>
     <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/asheroto/MessagesForWeb"/>
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Google"/>
     <ROW Property="ProductCode" Value="1033:{67E3C75A-BE1E-473E-A55D-747CD0C83FC1} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Messages for Web"/>
-    <ROW Property="ProductVersion" Value="0.0.6.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="0.0.6.1" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>
@@ -52,16 +51,8 @@
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="MessagesForWeb.exe" ComponentId="{D98782A2-732A-4B6D-9038-73733261623F}" Directory_="APPDIR" Attributes="256" KeyPath="MessagesForWeb.exe"/>
     <ROW Component="MessagesForWeb.exe.config" ComponentId="{E14FC251-B179-4B46-ACEF-B383F84237D5}" Directory_="APPDIR" Attributes="0" KeyPath="MessagesForWeb.exe.config" Type="0"/>
-    <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{BE170965-7BD6-46A5-A69D-92D036705EAE}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
-    <ROW Component="Microsoft.Web.WebView2.WinForms.dll" ComponentId="{1D02BB8B-5E5E-42E0-AF33-8B60173E7C65}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.WinForms.dll"/>
-    <ROW Component="Microsoft.Web.WebView2.Wpf.dll" ComponentId="{9790EEF1-521F-4B4D-B218-02CF806050E2}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Wpf.dll"/>
     <ROW Component="ProductInformation" ComponentId="{5C06956C-E2F4-437A-AC79-2A1E151F4C4F}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{19E56193-C19C-4B99-B18E-9869E8F5143E}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="System.Buffers.dll" ComponentId="{72B1AA5D-EBFC-4953-81EB-C95A39DC5C00}" Directory_="APPDIR" Attributes="0" KeyPath="System.Buffers.dll"/>
-    <ROW Component="System.Diagnostics.DiagnosticSource.dll" ComponentId="{4139DFF0-22A5-4FC2-9593-7581BA08E26B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Diagnostics.DiagnosticSource.dll"/>
-    <ROW Component="System.Memory.dll" ComponentId="{E63E9421-2F08-48BE-9729-F7077F2570B1}" Directory_="APPDIR" Attributes="0" KeyPath="System.Memory.dll"/>
-    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{30A55388-B13A-48BA-8FB1-CE0C06D4698D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
-    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{E5964002-45FD-41E4-9AD1-29AB28FB0176}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
     <ROW Component="WebView2Loader.dll" ComponentId="{7DCCD353-5DCE-4790-85CB-93570160ABF7}" Directory_="native_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
@@ -71,24 +62,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="MessagesForWeb.exe" Component_="MessagesForWeb.exe" FileName="MESSAG~1.EXE|MessagesForWeb.exe" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe" SelfReg="false" DigSign="true"/>
     <ROW File="MessagesForWeb.exe.config" Component_="MessagesForWeb.exe.config" FileName="MESSAG~1.CON|MessagesForWeb.exe.config" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe.config" SelfReg="false"/>
-    <ROW File="MessagesForWeb.xml" Component_="MessagesForWeb.exe.config" FileName="MESSAG~1.XML|MessagesForWeb.xml" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICROS~1.DLL|Microsoft.Web.WebView2.Core.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Core.xml" Component_="MessagesForWeb.exe.config" FileName="MICROS~1.XML|Microsoft.Web.WebView2.Core.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.WinForms.dll" Component_="Microsoft.Web.WebView2.WinForms.dll" FileName="MICROS~2.DLL|Microsoft.Web.WebView2.WinForms.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.WinForms.xml" Component_="MessagesForWeb.exe.config" FileName="MICROS~2.XML|Microsoft.Web.WebView2.WinForms.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Wpf.dll" Component_="Microsoft.Web.WebView2.Wpf.dll" FileName="MICROS~3.DLL|Microsoft.Web.WebView2.Wpf.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Wpf.xml" Component_="MessagesForWeb.exe.config" FileName="MICROS~3.XML|Microsoft.Web.WebView2.Wpf.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.xml" SelfReg="false"/>
     <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
-    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\bin\Release\System.Buffers.dll" SelfReg="false"/>
-    <ROW File="System.Buffers.xml" Component_="MessagesForWeb.exe.config" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\bin\Release\System.Buffers.xml" SelfReg="false"/>
-    <ROW File="System.Diagnostics.DiagnosticSource.dll" Component_="System.Diagnostics.DiagnosticSource.dll" FileName="SYSTEM~2.DLL|System.Diagnostics.DiagnosticSource.dll" Attributes="0" SourcePath="..\bin\Release\System.Diagnostics.DiagnosticSource.dll" SelfReg="false"/>
-    <ROW File="System.Diagnostics.DiagnosticSource.xml" Component_="MessagesForWeb.exe.config" FileName="SYSTEM~2.XML|System.Diagnostics.DiagnosticSource.xml" Attributes="0" SourcePath="..\bin\Release\System.Diagnostics.DiagnosticSource.xml" SelfReg="false"/>
-    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\bin\Release\System.Memory.dll" SelfReg="false"/>
-    <ROW File="System.Memory.xml" Component_="MessagesForWeb.exe.config" FileName="SYSTEM~3.XML|System.Memory.xml" Attributes="0" SourcePath="..\bin\Release\System.Memory.xml" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\bin\Release\System.Numerics.Vectors.dll" SelfReg="false"/>
-    <ROW File="System.Numerics.Vectors.xml" Component_="MessagesForWeb.exe.config" FileName="SYSTEM~4.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\bin\Release\System.Numerics.Vectors.xml" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="MessagesForWeb.exe.config" FileName="SYSTEM~5.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="b" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -97,7 +71,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="3" PackageType="1" FilesInsideExe="true" ExeIconPath="..\bin\Release\MessagesForWeb.exe" ExtractionFolder="[AppDataFolder]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="4" PackageType="1" FilesInsideExe="true" ExeIconPath="..\bin\Release\MessagesForWeb.exe" ExtractionFolder="[AppDataFolder]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -206,15 +180,7 @@
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
     <ROW Feature_="MainFeature" Component_="MessagesForWeb.exe"/>
     <ROW Feature_="MainFeature" Component_="MessagesForWeb.exe.config"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Core.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Wpf.dll"/>
     <ROW Feature_="MainFeature" Component_="WebView2Loader.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Diagnostics.DiagnosticSource.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
     <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
     <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
@@ -259,7 +225,6 @@
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
-    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>

@@ -4,11 +4,6 @@ Imports Microsoft.Web.WebView2.Core
 Public Class Main
     Dim AllowClose As Boolean = False
 
-    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) _
-        Handles WV.NavigationCompleted
-        Text = WV.CoreWebView2.DocumentTitle
-    End Sub
-
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Register hotkey
         Hotkey.registerHotkey(Me, "M", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)

@@ -4,15 +4,24 @@ Imports Microsoft.Web.WebView2.Core
 Public Class Main
     Dim AllowClose As Boolean = False
 
-    Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'Register hotkey
-        Hotkey.registerHotkey(Me, "M", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
+    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) _
+        Handles WV.NavigationCompleted
 
-        WindowState = FormWindowState.Maximized
+        Try
+            If Text = WV.CoreWebView2.DocumentTitle Then Exit Sub
+            Text = WV.CoreWebView2.DocumentTitle
+        Catch ex As Exception
+
+        End Try
     End Sub
 
-    Private Sub wVBrowser_CoreWebView2InitializationCompleted(sender As Object,
-                                                              e As CoreWebView2InitializationCompletedEventArgs) _
+    Private Sub Main_Invalidated(sender As Object, e As InvalidateEventArgs) Handles Me.Invalidated
+        'Register hotkey
+        Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
+    End Sub
+
+    Private Sub WV_CoreWebView2InitializationCompleted(sender As Object,
+                                                       e As CoreWebView2InitializationCompletedEventArgs) _
         Handles WV.CoreWebView2InitializationCompleted
         AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
     End Sub
@@ -31,23 +40,9 @@ Public Class Main
         End Try
     End Sub
 
-    Sub WaitNice(ms As Long)
-        Dim x As New Stopwatch
-        x.Start()
-        Do While x.ElapsedMilliseconds <= ms
-            Application.DoEvents()
-        Loop
-        x.Stop()
-    End Sub
-
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
         Handles SystemTrayIcon.MouseDoubleClick
         Show()
-        WaitNice(100)
-        Activate()
-        WaitNice(100)
-        BringToFront()
-        WaitNice(100)
         Activate()
     End Sub
 
@@ -63,7 +58,7 @@ Public Class Main
             Hotkey.handleHotKeyEvent(m.WParam)
         End If
         MyBase.WndProc(m)
-    End Sub 'System wide hotkey event handling
+    End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         AllowClose = True
@@ -86,6 +81,9 @@ Public Class Main
             End Select
         Next
         Opacity = 100
+    End Sub
+
+    Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
     End Sub
 End Class
 

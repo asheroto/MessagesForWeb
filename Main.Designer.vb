@@ -87,6 +87,7 @@ Partial Class Main
         Me.Opacity = 0R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Messages for Web"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.WV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SystemTrayIconContextMenu.ResumeLayout(False)
         Me.ResumeLayout(False)

@@ -85,6 +85,16 @@ Public Class Main
 
     Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
     End Sub
+
+    Private Sub RestartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestartToolStripMenuItem.Click
+        Dim p As New Process
+        p.StartInfo.FileName = "cmd"
+        p.StartInfo.Arguments = $"/C timeout /t 3 && ""{Application.ExecutablePath}"""
+        p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+        p.Start()
+
+        Application.Exit()
+    End Sub
 End Class
 
 Public Class Hotkey

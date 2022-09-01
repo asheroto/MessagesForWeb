@@ -363,4 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /AdvancedInstaller/MessagesForWeb-cache
 /AdvancedInstaller/Setup Files
-/AdvancedInstaller/MessagesForWeb.back (1).aip
+/AdvancedInstaller/*.back*.aip

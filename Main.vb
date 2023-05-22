@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Web.Script.Serialization
 Imports Microsoft.Web.WebView2.Core
 
 Public Class Main
@@ -83,9 +84,6 @@ Public Class Main
         Opacity = 100
     End Sub
 
-    Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
-    End Sub
-
     Private Sub RestartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestartToolStripMenuItem.Click
         Dim p As New Process
         p.StartInfo.FileName = "cmd"
@@ -95,6 +93,7 @@ Public Class Main
 
         Application.Exit()
     End Sub
+
 End Class
 
 Public Class Hotkey

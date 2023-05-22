@@ -1,4 +1,6 @@
-﻿# Messages for Web (on Windows) 
+﻿[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/asheroto)
+
+# Messages for Web (on Windows) 
 
 Runs Google Messages for Web inside of a native Windows application.
 

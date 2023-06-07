@@ -130,7 +130,6 @@ Public Class Hotkey
 
 #End Region
 
-
 #Region "Hotkey registration, unregistration and handling"
 
     Public Shared Sub registerHotkey(ByRef sourceForm As Form, triggerKey As String, modifier As KeyModifier)

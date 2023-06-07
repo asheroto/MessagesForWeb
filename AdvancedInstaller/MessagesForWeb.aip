@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="19.0" version="19.6" Modules="professional" RootPath="." Language="en" Id="{F1B8E9ED-AB99-4605-9F9A-F0FC71BB2852}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="19.0" version="20.3.1" Modules="professional" RootPath="." Language="en" Id="{F1B8E9ED-AB99-4605-9F9A-F0FC71BB2852}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="ActSyncAppComponent;CPLAppletComponent;AppXAppDetailsComponent;FixupComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
-    <ROW Property="AI_CURRENT_YEAR" Value="2022" ValueLocId="-"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2023" ValueLocId="-"/>
     <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
-    <ROW Property="AI_PACKAGING_TOOL" Value="Advanced Installer 19.6 build bf52c98e" ValueLocId="-"/>
+    <ROW Property="AI_PACKAGING_TOOL" Value="Advanced Installer 20.3.1 build dae8a046" ValueLocId="-"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|ProductName]"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPHELPLINK" Value="https://github.com/asheroto/MessagesForWeb"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="MessagesForWeb.exe" Type="8"/>
@@ -21,11 +22,11 @@
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/asheroto/MessagesForWeb"/>
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
-    <ROW Property="Manufacturer" Value="Google"/>
-    <ROW Property="ProductCode" Value="1033:{67F82164-FE51-4378-9603-936C48E3040C} " Type="16"/>
+    <ROW Property="Manufacturer" Value="asheroto"/>
+    <ROW Property="ProductCode" Value="1033:{D75A3C60-B050-4AE4-91C1-10BBF4C135C6} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Messages for Web"/>
-    <ROW Property="ProductVersion" Value="0.0.7.3"/>
+    <ROW Property="ProductVersion" Value="1.0.0.0"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>
@@ -40,6 +41,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="StartupFolder" Directory_Parent="TARGETDIR" DefaultDir="STARTU~1|StartupFolder" IsPseudoRoot="1"/>
@@ -49,7 +51,7 @@
     <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{72223503-91CE-4751-9040-D99D9548C0F8}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{9FD248DA-0B05-4DB9-BC3F-02EB22806FB6}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{9BE358BC-097F-413E-A35F-8361D30A4467}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{8D62FEAF-8AEC-498A-A136-CC52956D7E58}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>
@@ -59,8 +61,8 @@
     <ROW Component="Microsoft.Web.WebView2.WinForms.xml" ComponentId="{DDA08988-BA04-4265-B910-BE31918475D2}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.WinForms.xml" Type="0"/>
     <ROW Component="Microsoft.Web.WebView2.Wpf.dll" ComponentId="{5936C401-9786-4E26-899A-85AC735DE1AA}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Wpf.dll"/>
     <ROW Component="ProductInformation" ComponentId="{5C06956C-E2F4-437A-AC79-2A1E151F4C4F}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{19E56193-C19C-4B99-B18E-9869E8F5143E}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="WebView2Loader.dll" ComponentId="{252205E5-DBA2-428F-8B3B-3C618836C511}" Directory_="native_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{C02CA46F-0179-4386-8E1F-74F9B96040F4}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="WebView2Loader.dll" ComponentId="{3008FF62-BD8E-4D5D-9E91-46D2EC1879A5}" Directory_="native_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -72,11 +74,11 @@
     <ROW File="Microsoft.Web.WebView2.WinForms.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~1.XML|Microsoft.Web.WebView2.WinForms.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.xml" SelfReg="false"/>
     <ROW File="Microsoft.Web.WebView2.Wpf.dll" Component_="Microsoft.Web.WebView2.Wpf.dll" FileName="MICROS~2.DLL|Microsoft.Web.WebView2.Wpf.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.dll" SelfReg="false"/>
     <ROW File="Microsoft.Web.WebView2.Wpf.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~2.XML|Microsoft.Web.WebView2.Wpf.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.xml" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
     <ROW File="MessagesForWeb.exe.config" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MESSAG~1.CON|MessagesForWeb.exe.config" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.exe.config" SelfReg="false"/>
     <ROW File="MessagesForWeb.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MESSAG~1.XML|MessagesForWeb.xml" Attributes="0" SourcePath="..\bin\Release\MessagesForWeb.xml" SelfReg="false"/>
     <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICROS~3.DLL|Microsoft.Web.WebView2.Core.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
     <ROW File="Microsoft.Web.WebView2.Core.xml" Component_="Microsoft.Web.WebView2.WinForms.xml" FileName="MICROS~3.XML|Microsoft.Web.WebView2.Core.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.xml" SelfReg="false"/>
+    <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="b" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -92,7 +94,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Thumbprint="e3ea55773d51f10b942e1f6bc18c50217b736db3 Subject: Asher Solutions Inc&#10;Issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1&#10;Valid from 03/31/2022 to 04/01/2023&#10;User\MY" Subject="CN=Asher Solutions Inc, O=Asher Solutions Inc, L=Muskogee, S=Oklahoma, C=US, SERIALNUMBER=1913029601, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.2=Oklahoma, OID.1.3.6.1.4.1.311.60.2.1.3=US"/>
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Thumbprint="f65985f2e20b1f03343f69b515516136caee779d Subject: Asher Solutions Inc&#10;Issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1&#10;Valid from 03/16/2023 to 03/16/2024&#10;User\MY" Subject="CN=Asher Solutions Inc, O=Asher Solutions Inc, L=Muskogee, S=Oklahoma, C=US"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
@@ -182,6 +184,7 @@
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#MessagesForWeb.exe]"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
@@ -200,10 +203,10 @@
     <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.WinForms.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.WinForms.xml"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Wpf.dll"/>
-    <ROW Feature_="MainFeature" Component_="WebView2Loader.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Web.WebView2.Core.dll"/>
     <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
     <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
+    <ROW Feature_="MainFeature" Component_="WebView2Loader.dll"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
@@ -241,6 +244,7 @@
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
     <ROW Action="AI_DetectSoftware" Sequence="102"/>
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
@@ -293,8 +297,9 @@
     <ROW Registry="Windows" Root="-1" Key="Software\Microsoft\Windows" Name="\"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="MessagesforWeb" Directory_="SHORTCUTDIR" Name="MESSAG~1|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="Messagesforweb_1" Directory_="StartupFolder" Name="MESSAG~2|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Arguments="-startup" Description="MessagesForWeb.exe" Hotkey="0" Icon_="MessagesForWeb.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="MessagesforWeb" Directory_="SHORTCUTDIR" Name="MESSAG~1|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="MessagesforWeb_1" Directory_="ProgramMenuFolder" Name="MESSAG~1|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="MessagesforWeb_2" Directory_="StartupFolder" Name="MESSAG~1|Messages for Web" Component_="MessagesForWeb.exe" Target="[#MessagesForWeb.exe]" Arguments="-startup" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -304,12 +309,15 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
-    <ROW PrereqKey="AF4EF7137AE24E488A4E128FD1B89507" DisplayName="Microsoft Edge WebView2 Runtime (web installer)" VersionMin="96.0" SetupFileUrl="https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/de41d780-c562-4b27-813a-a7cb236e791e/MicrosoftEdgeWebview2Setup.exe" Location="1" ExactSize="1781528" WinNTVersions="Windows Vista x86, Windows Server 2008 x86, Windows 8 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 8 x64" Operator="1" NoUiComLine="/silent /install" Options="y" MD5="b97ff6d43d00ae1df8b45f13c3348c0e" TargetName="WebView2"/>
-    <ROW PrereqKey="BF9259651485FB4F316A40CB01E7B" DisplayName=".NET Framework 4.8 (web installer)" SetupFileUrl="https://download.visualstudio.microsoft.com/download/pr/014120d7-d689-4305-befd-3cb711108212/1f81f3962f75eff5d83a60abd3a3ec7b/ndp48-web.exe" Location="1" ExactSize="1479400" WinNTVersions="Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 8 x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86, Windows 10 version 2004 x86, Windows 10 version 20H2 x86, Windows 10 version 21H1 x86, Windows 10 version 21H2 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows 10 version 2004 x64, Windows 10 version 20H2 x64, Windows 10 version 21H1 x64, Windows 10 version 21H2 x64, Windows Server 2022 x64, Windows 11 x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" MD5="40604baf5a025f4b23cbe463239b68cb" TargetName=".NET Framework 4.8"/>
+    <ROW PrereqKey="AF4EF7137AE24E488A4E128FD1B89507" DisplayName="Microsoft Edge WebView2 Runtime (web installer)" VersionMin="96.0" SetupFileUrl="https://go.microsoft.com/fwlink/p/?LinkId=2124703" Location="1" ExactSize="0" WinNTVersions="Windows Vista x86, Windows Server 2008 x86, Windows 8 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 8 x64" Operator="1" ComLine="/silent /install" BasicUiComLine="/silent /install" NoUiComLine="/silent /install" Options="y" TargetName="WebView2"/>
+    <ROW PrereqKey="BF9259651485FB4F316A40CB01E7B" DisplayName=".NET Framework 4.8 (web installer)" SetupFileUrl="https://go.microsoft.com/fwlink/?LinkId=2085155" Location="1" ExactSize="0" WinNTVersions="Windows Vista x86, Windows Server 2008 x86, Windows 7 RTM x86, Windows 8 x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86, Windows 10 version 2004 x86, Windows 10 version 20H2 x86, Windows 10 version 21H1 x86, Windows 10 version 21H2 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows 10 version 2004 x64, Windows 10 version 20H2 x64, Windows 10 version 21H1 x64, Windows 10 version 21H2 x64, Windows Server 2022 x64, Windows 11 x64" Operator="1" ComLine="/q /norestart" BasicUiComLine="/q /norestart" NoUiComLine="/q /norestart" Options="xy" TargetName=".NET Framework 4.8"/>
     <ATTRIBUTE name="PrereqsOrder" value="AF4EF7137AE24E488A4E128FD1B89507 BF9259651485FB4F316A40CB01E7B"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
-    <ROW SearchKey="AF4EF7137AE24E488A4E128FD1B89507pv" Prereq="AF4EF7137AE24E488A4E128FD1B89507" SearchType="2" SearchString="HKLM\SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" VerMin="96.0.1054.43" Order="1" Property="PreReqSearch_AF4EF7137AE24E488A4E12"/>
+    <ROW SearchKey="AF4EF7137AE24E488A4E128FD1B89507pv" Prereq="AF4EF7137AE24E488A4E128FD1B89507" SearchType="2" SearchString="HKCU\Software\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" VerMin="107.0.1418.42" Order="1" Property="PreReqSearch_AF4EF7137AE24E488A4E12"/>
     <ROW SearchKey="BF9259651485FB4F316A40CB01E7BReleas" Prereq="BF9259651485FB4F316A40CB01E7B" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G528048" Order="1" Property="PreReqSearch_BF9259651485FB4F316A40"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="..\bin\Release" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store|MessagesForWeb.exe.WebView2" ExcludeFlags="6" FileAddOptions="4"/>
   </COMPONENT>
 </DOCUMENT>

@@ -83,11 +83,15 @@ Public Class Main
     End Sub
 
     Private Sub RestartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestartToolStripMenuItem.Click
-        Dim p As New Process
-        p.StartInfo.FileName = "cmd"
-        p.StartInfo.Arguments = $"/C timeout /t 3 && start """" ""{Application.ExecutablePath}"""
-        p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
-        p.Start()
+        Try
+            Dim p As New Process
+            p.StartInfo.FileName = "cmd"
+            p.StartInfo.Arguments = $"/C timeout /t 3 && start """" ""{Application.ExecutablePath}"""
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            p.Start()
+        Catch ex As Exception
+
+        End Try
 
         Application.Exit()
     End Sub

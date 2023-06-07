@@ -43,8 +43,7 @@ Public Class Main
 
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
         Handles SystemTrayIcon.MouseDoubleClick
-        Show()
-        Activate()
+        DoShow()
     End Sub
 
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -68,8 +67,7 @@ Public Class Main
     End Sub
 
     Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
-        Show()
-        Activate()
+        DoShow()
     End Sub
 
     Private Sub Startup_Tick(sender As Object, e As EventArgs) Handles Startup.Tick
@@ -94,6 +92,13 @@ Public Class Main
         Application.Exit()
     End Sub
 
+    Public Shared Sub DoShow()
+        If Main.WindowState = FormWindowState.Minimized Then
+            Main.WindowState = FormWindowState.Maximized
+        End If
+        Main.Show()
+        Main.Activate()
+    End Sub
 End Class
 
 Public Class Hotkey
@@ -139,8 +144,7 @@ Public Class Hotkey
     End Sub
 
     Public Shared Sub handleHotKeyEvent(hotkeyID As IntPtr)
-        Main.Show()
-        Main.Activate()
+        Main.DoShow()
     End Sub
 
 #End Region

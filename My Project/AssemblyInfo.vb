@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Messages for Web")>
-<Assembly: AssemblyDescription("Google Messages for Web (for Windows). Runs Messages for Web in a native Windows application. Closes to system tray. Press Ctrl+Alt+M to show.")>
+<Assembly: AssemblyDescription("Google Messages for Web (for Windows) in a Windows app! Closes to system tray. Press Ctrl+Alt+M to show.")>
 <Assembly: AssemblyCompany("asheroto")>
 <Assembly: AssemblyProduct("MessagesForWeb")>
-<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyCopyright("GNU GPLv3")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.7.3")>
-<Assembly: AssemblyFileVersion("0.0.7.3")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

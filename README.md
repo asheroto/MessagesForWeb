@@ -9,7 +9,7 @@ Keeps Messages for Web running in the system tray. To show the window, press **C
 To start up the program to the system tray (window hidden on launch), pass the `-startup` argument.
 
 **Example:**
-```
+```powershell
 .\MessagesForWeb.exe -startup
 ``` 
 

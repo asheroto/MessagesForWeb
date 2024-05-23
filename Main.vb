@@ -1,12 +1,13 @@
 ﻿Imports System.ComponentModel
 Imports System.Web.Script.Serialization
 Imports Microsoft.Web.WebView2.Core
+Imports Microsoft.Web.WebView2.WinForms
 
 Public Class Main
     Dim AllowClose As Boolean = False
 
-    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) _
-        Handles WV.NavigationCompleted
+    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs)
+
 
         Try
             If Text = WV.CoreWebView2.DocumentTitle Then Exit Sub
@@ -22,8 +23,8 @@ Public Class Main
     End Sub
 
     Private Sub WV_CoreWebView2InitializationCompleted(sender As Object,
-                                                       e As CoreWebView2InitializationCompletedEventArgs) _
-        Handles WV.CoreWebView2InitializationCompleted
+                                                       e As CoreWebView2InitializationCompletedEventArgs)
+
         AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
     End Sub
 

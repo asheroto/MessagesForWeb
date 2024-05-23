@@ -24,29 +24,16 @@ Partial Class Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
-        Me.WV = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.SystemTrayIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RestartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Startup = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.WV, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.WV = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.ContextMenu.SuspendLayout()
+        CType(Me.WV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'WV
-        '
-        Me.WV.AllowExternalDrop = True
-        Me.WV.CreationProperties = Nothing
-        Me.WV.DefaultBackgroundColor = System.Drawing.Color.White
-        Me.WV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WV.Location = New System.Drawing.Point(0, 0)
-        Me.WV.Name = "WV"
-        Me.WV.Size = New System.Drawing.Size(1011, 687)
-        Me.WV.Source = New System.Uri("https://messages.google.com/web/conversations", System.UriKind.Absolute)
-        Me.WV.TabIndex = 0
-        Me.WV.ZoomFactor = 1.0R
         '
         'SystemTrayIcon
         '
@@ -84,6 +71,19 @@ Partial Class Main
         Me.Startup.Enabled = True
         Me.Startup.Interval = 10
         '
+        'WV
+        '
+        Me.WV.AllowExternalDrop = True
+        Me.WV.CreationProperties = Nothing
+        Me.WV.DefaultBackgroundColor = System.Drawing.Color.White
+        Me.WV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WV.Location = New System.Drawing.Point(0, 0)
+        Me.WV.Name = "WV"
+        Me.WV.Size = New System.Drawing.Size(1011, 687)
+        Me.WV.Source = New System.Uri("https://messages.google.com/web/conversations", System.UriKind.Absolute)
+        Me.WV.TabIndex = 1
+        Me.WV.ZoomFactor = 1.0R
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -96,16 +96,16 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Messages for Web"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.WV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenu.ResumeLayout(False)
+        CType(Me.WV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents WV As Microsoft.Web.WebView2.WinForms.WebView2
     Friend WithEvents SystemTrayIcon As NotifyIcon
     Friend Shadows WithEvents ContextMenu As ContextMenuStrip
     Friend WithEvents ShowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Startup As Timer
     Friend WithEvents RestartToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WV As Microsoft.Web.WebView2.WinForms.WebView2
 End Class

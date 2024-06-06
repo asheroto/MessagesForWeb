@@ -23,10 +23,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="asheroto"/>
-    <ROW Property="ProductCode" Value="1033:{9F8063B0-4F41-45D0-9CC3-B56B19FCBA0C} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{E456DBF7-A737-4E8A-8909-B4FB9618B1D2} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Messages for Web"/>
-    <ROW Property="ProductVersion" Value="1.0.1.0"/>
+    <ROW Property="ProductVersion" Value="1.0.2.0"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>
@@ -55,7 +55,7 @@
     <ROW Directory="winx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x86"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{EDA9632A-8463-4356-89A3-462D5498306C}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{C25AE579-4776-4829-806A-CF2795243F1D}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{9BE358BC-097F-413E-A35F-8361D30A4467}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{8D62FEAF-8AEC-498A-A136-CC52956D7E58}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>

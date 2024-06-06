@@ -7,8 +7,6 @@ Public Class Main
     Dim AllowClose As Boolean = False
 
     Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs)
-
-
         Try
             If Text = WV.CoreWebView2.DocumentTitle Then Exit Sub
             Text = WV.CoreWebView2.DocumentTitle
@@ -20,26 +18,6 @@ Public Class Main
     Private Sub Main_Invalidated(sender As Object, e As InvalidateEventArgs) Handles Me.Invalidated
         'Register hotkey
         Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
-    End Sub
-
-    Private Sub WV_CoreWebView2InitializationCompleted(sender As Object,
-                                                       e As CoreWebView2InitializationCompletedEventArgs)
-
-        AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
-    End Sub
-
-    Private Sub CoreWebView2_NewWindowRequested(sender As Object, e As CoreWebView2NewWindowRequestedEventArgs)
-        e.Handled = True
-
-        Try
-            Dim p As New Process
-            p.StartInfo.UseShellExecute = True
-            p.StartInfo.FileName = e.Uri
-            p.StartInfo.WindowStyle = ProcessWindowStyle.Normal
-            p.Start()
-        Catch ex As Exception
-
-        End Try
     End Sub
 
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
@@ -103,6 +81,34 @@ Public Class Main
         End If
         Main.Show()
         Main.Activate()
+    End Sub
+
+    Private Async Function InitializeWebView() As Task
+        Try
+            Await WV.EnsureCoreWebView2Async(Nothing)
+            AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
+        Catch ex As Exception
+            MessageBox.Show($"Initialization error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Function
+
+    Private Sub CoreWebView2_NewWindowRequested(sender As Object, e As CoreWebView2NewWindowRequestedEventArgs)
+        e.Handled = True
+
+        Try
+            Dim p As New Process()
+            p.StartInfo.UseShellExecute = True
+            p.StartInfo.FileName = e.Uri
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Normal
+            p.Start()
+        Catch ex As Exception
+            ' Handle any exceptions here
+            MessageBox.Show($"Error opening new window: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Async Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Await InitializeWebView()
     End Sub
 End Class
 

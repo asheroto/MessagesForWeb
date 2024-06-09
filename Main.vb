@@ -1,32 +1,30 @@
 ﻿Imports System.ComponentModel
-Imports System.Web.Script.Serialization
 Imports Microsoft.Web.WebView2.Core
-Imports Microsoft.Web.WebView2.WinForms
 
 Public Class Main
     Dim AllowClose As Boolean = False
 
     Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs)
         Try
-            If Text = WV.CoreWebView2.DocumentTitle Then Exit Sub
-            Text = WV.CoreWebView2.DocumentTitle
+            If Text <> WV.CoreWebView2.DocumentTitle Then
+                Text = WV.CoreWebView2.DocumentTitle
+            End If
         Catch ex As Exception
-
+            ' Handle exception (optional)
         End Try
     End Sub
 
     Private Sub Main_Invalidated(sender As Object, e As InvalidateEventArgs) Handles Me.Invalidated
-        'Register hotkey
+        ' Register hotkey
         Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
     End Sub
 
-    Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
-        Handles SystemTrayIcon.MouseDoubleClick
+    Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles SystemTrayIcon.MouseDoubleClick
         DoShow()
     End Sub
 
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If AllowClose = False Then
+        If Not AllowClose Then
             e.Cancel = True
             Hide()
         End If
@@ -53,23 +51,22 @@ Public Class Main
         Startup.Enabled = False
         Dim s() As String = Environment.GetCommandLineArgs()
         For i = 1 To s.Length - 1
-            Select Case LCase(s(i))
-                Case "-startup"
-                    Close()
-            End Select
+            If LCase(s(i)) = "-startup" Then
+                Close()
+            End If
         Next
         Opacity = 100
     End Sub
 
     Private Sub RestartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestartToolStripMenuItem.Click
         Try
-            Dim p As New Process
+            Dim p As New Process()
             p.StartInfo.FileName = "cmd"
             p.StartInfo.Arguments = $"/C timeout /t 3 && start """" ""{Application.ExecutablePath}"""
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
             p.Start()
         Catch ex As Exception
-
+            ' Handle exception (optional)
         End Try
 
         Application.Exit()
@@ -83,14 +80,9 @@ Public Class Main
         Main.Activate()
     End Sub
 
-    Private Async Function InitializeWebView() As Task
-        Try
-            Await WV.EnsureCoreWebView2Async(Nothing)
-            AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
-        Catch ex As Exception
-            MessageBox.Show($"Initialization error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Function
+    Private Sub WV_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WV.CoreWebView2InitializationCompleted
+        AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
+    End Sub
 
     Private Sub CoreWebView2_NewWindowRequested(sender As Object, e As CoreWebView2NewWindowRequestedEventArgs)
         e.Handled = True
@@ -102,13 +94,8 @@ Public Class Main
             p.StartInfo.WindowStyle = ProcessWindowStyle.Normal
             p.Start()
         Catch ex As Exception
-            ' Handle any exceptions here
-            MessageBox.Show($"Error opening new window: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Handle exception (optional)
         End Try
-    End Sub
-
-    Private Async Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Await InitializeWebView()
     End Sub
 End Class
 

@@ -14,11 +14,6 @@ Public Class Main
         End Try
     End Sub
 
-    Private Sub Main_Invalidated(sender As Object, e As InvalidateEventArgs) Handles Me.Invalidated
-        ' Register hotkey
-        Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
-    End Sub
-
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles SystemTrayIcon.MouseDoubleClick
         DoShow()
     End Sub
@@ -29,10 +24,10 @@ Public Class Main
             Hide()
         End If
     End Sub
-
     Protected Overrides Sub WndProc(ByRef m As Message)
         If m.Msg = Hotkey.WM_HOTKEY Then
             Hotkey.handleHotKeyEvent(m.WParam)
+            Return
         End If
         MyBase.WndProc(m)
     End Sub
@@ -71,13 +66,18 @@ Public Class Main
 
         Application.Exit()
     End Sub
-
     Public Shared Sub DoShow()
         If Main.WindowState = FormWindowState.Minimized Then
-            Main.WindowState = FormWindowState.Maximized
+            Main.WindowState = FormWindowState.Normal
         End If
+
         Main.Show()
-        Main.Activate()
+
+        If Not Main.Focused Then
+            Main.TopMost = True
+            Main.TopMost = False
+            Main.Activate()
+        End If
     End Sub
 
     Private Sub WV_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WV.CoreWebView2InitializationCompleted
@@ -96,6 +96,10 @@ Public Class Main
         Catch ex As Exception
             ' Handle exception (optional)
         End Try
+    End Sub
+
+    Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control Or Hotkey.KeyModifier.Alt)
     End Sub
 End Class
 

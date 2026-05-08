@@ -18,15 +18,19 @@ Public Class Main
         DoShow()
     End Sub
 
-    Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If Not AllowClose Then
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If AllowClose = False AndAlso e.CloseReason = CloseReason.UserClosing Then
             e.Cancel = True
-            Hide()
+            ShowInTaskbar = False
+            Visible = False
         End If
     End Sub
     Protected Overrides Sub WndProc(ByRef m As Message)
         If m.Msg = Hotkey.WM_HOTKEY Then
-            Hotkey.handleHotKeyEvent(m.WParam)
+            Hotkey.handleHotKeyEvent(m.WParam, Me)
+            Return
+        End If
+        If m.Msg = &H112 AndAlso (m.WParam.ToInt32() And &HFFF0) = &HF100 Then
             Return
         End If
         MyBase.WndProc(m)
@@ -34,7 +38,6 @@ Public Class Main
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         AllowClose = True
-        Hotkey.unregisterHotkeys(Me)
         Close()
     End Sub
 
@@ -66,18 +69,17 @@ Public Class Main
 
         Application.Exit()
     End Sub
-    Public Shared Sub DoShow()
-        If Main.WindowState = FormWindowState.Minimized Then
-            Main.WindowState = FormWindowState.Normal
+    Public Sub DoShow()
+        ShowInTaskbar = True
+        Visible = True
+
+        If WindowState = FormWindowState.Minimized Then
+            WindowState = FormWindowState.Normal
         End If
 
-        Main.Show()
-
-        If Not Main.Focused Then
-            Main.TopMost = True
-            Main.TopMost = False
-            Main.Activate()
-        End If
+        TopMost = True
+        TopMost = False
+        Activate()
     End Sub
 
     Private Sub WV_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WV.CoreWebView2InitializationCompleted
@@ -98,8 +100,12 @@ Public Class Main
         End Try
     End Sub
 
-    Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Main_HandleCreated(sender As Object, e As EventArgs) Handles Me.HandleCreated
         Hotkey.registerHotkey(Me, "m", Hotkey.KeyModifier.Control Or Hotkey.KeyModifier.Alt)
+    End Sub
+
+    Private Sub Main_HandleDestroyed(sender As Object, e As EventArgs) Handles Me.HandleDestroyed
+        Hotkey.unregisterHotkeys(Me)
     End Sub
 End Class
 
@@ -144,8 +150,8 @@ Public Class Hotkey
         UnregisterHotKey(sourceForm.Handle, 1)  'Remember to call unregisterHotkeys() when closing your application.
     End Sub
 
-    Public Shared Sub handleHotKeyEvent(hotkeyID As IntPtr)
-        Main.DoShow()
+    Public Shared Sub handleHotKeyEvent(hotkeyID As IntPtr, targetForm As Main)
+        targetForm.DoShow()
     End Sub
 
 #End Region

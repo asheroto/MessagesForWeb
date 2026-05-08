@@ -19,10 +19,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="asheroto"/>
-    <ROW Property="ProductCode" Value="1033:{65AC870C-407F-483A-9CF1-0E815AD56A50} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{BDDA52D6-AAB5-4888-B790-1A0B03DC0A54} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Messages for Web"/>
-    <ROW Property="ProductVersion" Value="1.0.4.0" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.0.5.0" Options="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{B61CB279-E6D6-43FD-A419-E0EF09A01AAC}"/>
@@ -53,7 +53,7 @@
     <ROW Directory="winx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x86"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{5DC2AADB-3717-4CFE-9527-855B7D2183E9}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{C9EDA363-0606-4BD8-9F74-F3810F92CA50}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{9BE358BC-097F-413E-A35F-8361D30A4467}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{8D62FEAF-8AEC-498A-A136-CC52956D7E58}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5BF0282-444C-4194-BF5D-D6FA5F446317}" Directory_="APPDIR" Attributes="0"/>
@@ -108,7 +108,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Thumbprint="9951AAD2AD06987C4EBF970E618B59FF043AB82E Subject: Asher Solutions Inc&#10;Issuer: DigiCert Global G3 Code Signing ECC SHA384 2021 CA1&#10;Valid from 03/04/2025 to 02/27/2026" Subject="CN=Asher Solutions Inc, O=Asher Solutions Inc, L=Muskogee, S=Oklahoma, C=US" Store="User\MY"/>
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Thumbprint="D60BACA670772092EB7AAEA121A8586FB4F8FF0A Subject: Asher Solutions Inc&#10;Issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1&#10;Valid from 02/08/2026 to 02/08/2027" Subject="CN=Asher Solutions Inc, O=Asher Solutions Inc, L=Muskogee, S=Oklahoma, C=US" Store="User\MY"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
